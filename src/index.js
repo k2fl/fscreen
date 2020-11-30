@@ -50,7 +50,7 @@ const vendor = (
 );
 
 export default {
-  requestFullscreen: element => element[vendor[key.requestFullscreen]](),
+  requestFullscreen: element => element[vendor[key.requestFullscreen]]({ navigationUI: 'hide' }),
   requestFullscreenFunction: element => element[vendor[key.requestFullscreen]],
   get exitFullscreen() { return document[vendor[key.exitFullscreen]].bind(document); },
   get fullscreenPseudoClass() { return `:${vendor[key.fullscreen]}`; },

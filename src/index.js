@@ -53,7 +53,7 @@ export default {
   requestFullscreen: element => {
     const promise = element[vendor[key.requestFullscreen]]({ navigationUI: 'hide' }); 
     if (promise && typeof promise.then === 'function') {
-      promise.catch(() => {});
+      promise.catch(console.error);
     }
     return promise;
   },
